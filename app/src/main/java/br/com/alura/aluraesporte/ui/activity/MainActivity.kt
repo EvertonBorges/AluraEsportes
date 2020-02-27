@@ -2,6 +2,7 @@ package br.com.alura.aluraesporte.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
@@ -17,10 +18,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         controlador.addOnDestinationChangedListener { controller, destination, arguments ->
             title = destination.label
-            when (destination.id) {
-                R.id.listaProdutos -> supportActionBar?.show()
-                R.id.login -> supportActionBar?.hide()
-            }
+            viewModel.appBar.observe(this, Observer {
+                it?.let {temAppBar ->
+                    if (temAppBar) {
+                        supportActionBar?.show()
+                    } else {
+                        supportActionBar?.hide()
+                    }
+                }
+            })
         }
     }
 
