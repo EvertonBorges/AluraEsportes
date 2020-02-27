@@ -63,9 +63,9 @@ class ListaProdutosFragment : Fragment() {
     }
 
     private fun vaiParaDetalhesDoProduto(produtoId: Long) {
-        val direcoes = ListaProdutosFragmentDirections
+        val direcao = ListaProdutosFragmentDirections
             .acaoListaProdutosParaDetalhesProduto(produtoId)
-        controlador.navigate(direcoes)
+        controlador.navigate(direcao)
     }
 
 }

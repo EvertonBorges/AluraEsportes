@@ -32,5 +32,8 @@
             android:id="@+id/acao_pagamento_para_listaProdutos"
             app:destination="@id/listaProdutos"
             app:popUpTo="@id/nav_graph" />
+        <argument
+            android:name="produtoId"
+            app:argType="long" />
     </fragment>
 </navigation>
