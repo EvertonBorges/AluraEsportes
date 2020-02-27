@@ -11,5 +11,6 @@ class LoginViewModel(
     fun desloga() = repository.desloga()
 
     fun estaLogado() = repository.estaLogado()
+    fun naoEstaLogado() = !estaLogado()
 
 }
