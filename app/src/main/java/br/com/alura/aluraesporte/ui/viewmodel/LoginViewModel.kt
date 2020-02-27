@@ -7,9 +7,8 @@ class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    fun loga() {
-        repository.loga()
-    }
+    fun loga() = repository.loga()
+    fun desloga() = repository.desloga()
 
     fun estaLogado() = repository.estaLogado()
 
